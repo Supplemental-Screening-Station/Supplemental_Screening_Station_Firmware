@@ -28,9 +28,8 @@ void setup()
 
 	tft.init(135, 240);
 	tft.setRotation(1);
-	tft.fillScreen(ST77XX_WHITE);
+	tft.fillScreen(ST77XX_BLACK);
 	rangefinder1.attach(ULTRASONIC_TRIG, ULTRASONIC_ECHO);
-
 	//mlx.writeEmissivity(1.0);
 }
 
@@ -43,11 +42,11 @@ void loop()
 	  Serial.print("*C\tObject = "); Serial.print(objtemp); Serial.println("*C");
 	  Serial.print("Ambient = "); Serial.print(mlx.readAmbientTempF());
 	  Serial.print("*F\tObject = "); Serial.print(mlx.readObjectTempF()*1.06); Serial.println("*F");
-	  //tft.fillScreen(ST77XX_WHITE);
+
 
 	  tft.setTextSize(4);
 	  tft.setCursor(0, 0);
-	  tft.setTextColor(ST77XX_BLACK);
+	  tft.setTextColor(ST77XX_WHITE);
 	  tft.setTextWrap(false);
 	  tft.print(String(distance));
 	  tft.setCursor(180, 0);
@@ -59,7 +58,7 @@ void loop()
 	  delay(250);
 	  tft.setTextSize(4);
 	  tft.setCursor(0, 0);
-	  tft.setTextColor(ST77XX_WHITE);
+	  tft.setTextColor(ST77XX_BLACK);
 	  tft.setTextWrap(false);
 	  tft.print(String(distance));
 	  tft.setCursor(0, 135/2);
